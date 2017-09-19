@@ -5,7 +5,6 @@ type BundledProduct struct {
 	count uint16
 }
 
-// Rules apply against
 type Rule interface {
 	Evaluate(Cart) (discount PriceType, bundledProduct BundledProduct)
 }
@@ -107,7 +106,7 @@ func (r *promoRule) Evaluate(c Cart) (discount PriceType, bundledProduct Bundled
 		cartTotal += PriceType(v.count) * v.product.Price
 	}
 
-	discount = percentageOfPrice(cartTotal, r.discountPct) //PriceType(float32(cartTotal) * (float32(r.discountPct) / float32(100)))
+	discount = percentageOfPrice(cartTotal, r.discountPct)
 
 	return discount, BundledProduct{}
 }
