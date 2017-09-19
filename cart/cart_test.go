@@ -4,11 +4,6 @@ import (
 	"testing"
 )
 
-// TODO:
-// 1. Test that given a pricing rule, it triggers as expected when the correct items are added to the cart.
-// 2. Test that a triggered pricing rule reverts if an item is removed which triggered the discount.
-// 3. Test promocodes.
-
 func checkCartContainsNProductsWithCode(t *testing.T, cart Cart, prodCode string, expectedCount uint16) {
 	items := cart.Items()
 
